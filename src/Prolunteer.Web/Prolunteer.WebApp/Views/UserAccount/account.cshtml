@@ -1,0 +1,28 @@
+﻿@inject Prolunteer.Common.DTOs.CurrentUserDTO currentUser
+@{
+    ViewData["Title"] = $"{currentUser.FirstName} {currentUser.LastName}";
+}
+
+<div>
+    <h1>@($"{currentUser.FirstName} {currentUser.LastName}")</h1>
+    @foreach (var role in currentUser.Roles)
+    {
+        <h4>@(((RoleTypes)role).ToString())</h4>
+    }
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 offset-4 text-center">
+                <a asp-action="ChangePassword" class="btn btn-primary w-75">Change Password</a>
+            </div>
+        </div>
+        @if (currentUser.Roles.Contains((int)RoleTypes.Volunteer)) 
+        {
+            <hr />
+            <div class="row">
+                <div class="col-sm-4 offset-4 text-center">
+                    <a asp-controller="Certification" asp-action="RequestCertification" class="btn btn-primary w-75">Apply for certification</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>

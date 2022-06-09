@@ -1,0 +1,405 @@
+{
+  "Bucuresti": [
+    "Bucuresti"
+  ],
+  "Alba": [
+    "Alba Iulia",
+    "Sebes",
+    "Aiud",
+    "Cugir",
+    "Blaj",
+    "Ocna Mures",
+    "Zlatna",
+    "Campeni",
+    "Teius",
+    "Abrud",
+    "Baia de Aries"
+  ],
+  "Arad": [
+    "Arad",
+    "Pecica",
+    "Santana",
+    "Lipova",
+    "Ineu",
+    "Chisineu-Cris",
+    "Nadlac",
+    "Curtici",
+    "Pancota"
+  ],
+  "Arges": [
+    "Pitesti",
+    "Mioveni",
+    "Campulung",
+    "Curtea de Arges",
+    "stefanesti",
+    "Costesti",
+    "Topoloveni"
+  ],
+  "Bacau": [
+    "Bacau",
+    "Onesti",
+    "Moinesti",
+    "Comanesti",
+    "Buhusi",
+    "Darmanesti",
+    "Targu Ocna",
+    "Slanic Moldova"
+  ],
+  "Bihor": [
+    "Oradea",
+    "Salonta",
+    "Marghita",
+    "Sacueni",
+    "Beius",
+    "Alesd",
+    "Valea lui Mihai",
+    "stei",
+    "Vascau",
+    "Nucet"
+  ],
+  "Bistrita-Nasaud": [
+    "Bistrita",
+    "Beclean",
+    "Sangeorz-Bai",
+    "Nasaud"
+  ],
+  "Botosani": [
+    "Botosani",
+    "Dorohoi",
+    "Flamanzi",
+    "Darabani",
+    "Saveni",
+    "stefanesti",
+    "Bucecea"
+  ],
+  "Braila": [
+    "Braila",
+    "Ianca",
+    "insuratei",
+    "Faurei"
+  ],
+  "Brasov": [
+    "Brasov",
+    "Sacele",
+    "Fagaras",
+    "Zarnesti",
+    "Codlea",
+    "Rasnov",
+    "Victoria",
+    "Rupea",
+    "Ghimbav",
+    "Predeal"
+  ],
+  "Buzau": [
+    "Buzau",
+    "Ramnicu Sarat",
+    "Nehoiu",
+    "Patarlagele",
+    "Pogoanele"
+  ],
+  "Calarasi": [
+    "Calarasi",
+    "Oltenita",
+    "Budesti",
+    "Fundulea",
+    "Lehliu Gara"
+  ],
+  "Caras-Severin": [
+    "Resita",
+    "Caransebes",
+    "Bocsa",
+    "Moldova Noua",
+    "Oravita",
+    "Otelu Rosu",
+    "Anina",
+    "Baile Herculane"
+  ],
+  "Cluj": [
+    "Cluj-Napoca",
+    "Turda",
+    "Dej",
+    "Campia Turzii",
+    "Gherla",
+    "Huedin"
+  ],
+  "Constanta": [
+    "Constanta",
+    "Medgidia",
+    "Mangalia",
+    "Navodari",
+    "Cernavoda",
+    "Ovidiu",
+    "Murfatlar",
+    "Harsova",
+    "Eforie",
+    "Techirghiol",
+    "Negru Voda"
+  ],
+  "Covasna": [
+    "Sfantu Gheorghe",
+    "Targu Secuiesc",
+    "Covasna",
+    "Baraolt",
+    "intorsura Buzaului"
+  ],
+  "Dambovita": [
+    "Targoviste",
+    "Moreni",
+    "Pucioasa",
+    "Gaesti",
+    "Titu",
+    "Fieni",
+    "Racari"
+  ],
+  "Dolj": [
+    "Craiova",
+    "Bailesti",
+    "Calafat",
+    "Filiasi",
+    "Dabuleni",
+    "Segarcea",
+    "Bechet"
+  ],
+  "Galati": [
+    "Galati",
+    "Tecuci",
+    "Targu Bujor",
+    "Beresti"
+  ],
+  "Giurgiu": [
+    "Giurgiu",
+    "Bolintin-Vale",
+    "Mihailesti"
+  ],
+  "Gorj": [
+    "Targu Jiu",
+    "Motru",
+    "Rovinari",
+    "Bumbesti-Jiu",
+    "Targu Carbunesti",
+    "Tismana",
+    "Novaci",
+    "ticleni"
+  ],
+  "Harghita": [
+    "Miercurea Ciuc",
+    "Odorheiu Secuiesc",
+    "Gheorgheni",
+    "Toplita",
+    "Cristuru Secuiesc",
+    "Vlahita",
+    "Balan",
+    "Borsec",
+    "Baile Tusnad"
+  ],
+  "Hunedoara": [
+    "Deva",
+    "Hunedoara",
+    "Petrosani",
+    "Vulcan",
+    "Lupeni",
+    "Petrila",
+    "Orastie",
+    "Brad",
+    "Simeria",
+    "Calan",
+    "Hateg",
+    "Uricani",
+    "Geoagiu",
+    "Aninoasa"
+  ],
+  "Ialomita": [
+    "Slobozia",
+    "Fetesti",
+    "Urziceni",
+    "tandarei",
+    "Amara",
+    "Fierbinti-Targ",
+    "Cazanesti"
+  ],
+  "Iasi": [
+    "Iasi"
+  ],
+  "Iasi": [
+    "Pascani",
+    "Harlau",
+    "Targu Frumos",
+    "Podu Iloaiei"
+  ],
+  "Ilfov": [
+    "Voluntari",
+    "Pantelimon",
+    "Buftea",
+    "Popesti-Leordeni",
+    "Bragadiru",
+    "Chitila",
+    "Otopeni",
+    "Magurele"
+  ],
+  "Maramures": [
+    "Baia Mare",
+    "Sighetu Marmatiei",
+    "Borsa",
+    "Baia Sprie",
+    "Viseu de Sus",
+    "Targu Lapus",
+    "Seini",
+    "somcuta Mare",
+    "Ulmeni",
+    "Tautii-Magheraus",
+    "Cavnic",
+    "Salistea de Sus",
+    "Dragomiresti"
+  ],
+  "Mehedinti": [
+    "Drobeta-Turnu Severin",
+    "Strehaia",
+    "Orsova",
+    "Vanju Mare",
+    "Baia de Arama"
+  ],
+  "Mures": [
+    "Targu Mures",
+    "Reghin",
+    "Sighisoara",
+    "Tarnaveni",
+    "Ludus",
+    "Sovata",
+    "Iernut",
+    "Sarmasu",
+    "Ungheni",
+    "Miercurea Nirajului",
+    "Sangeorgiu de Padure"
+  ],
+  "Neamt": [
+    "Piatra Neamt",
+    "Roman",
+    "Targu Neamt",
+    "Roznov",
+    "Bicaz"
+  ],
+  "Olt": [
+    " Slatina",
+    "Caracal",
+    "Bals",
+    "Corabia",
+    "Scornicesti",
+    "Draganesti-Olt",
+    "Piatra-Olt",
+    "Potcoava"
+  ],
+  "Prahova": [
+    "Ploiesti",
+    "Campina",
+    "Baicoi",
+    "Breaza",
+    "Mizil",
+    "Valenii de Munte",
+    "Comarnic",
+    "Boldesti-Scaeni",
+    "Urlati",
+    "Sinaia",
+    "Busteni",
+    "Plopeni",
+    "Slanic",
+    "Azuga"
+  ],
+  "Salaj": [
+    "Zalau",
+    "simleu Silvaniei",
+    "Jibou",
+    "Cehu Silvaniei"
+  ],
+  "Satu Mare": [
+    "Satu Mare",
+    "Carei",
+    "Negresti-Oas",
+    "Tasnad",
+    "Livada",
+    "Ardud"
+  ],
+  "Sibiu": [
+    "Sibiu",
+    "Medias",
+    "Cisnadie",
+    "Avrig",
+    "Agnita",
+    "Dumbraveni",
+    "Talmaciu",
+    "Copsa Mica",
+    "Saliste",
+    "Miercurea Sibiului",
+    "Ocna Sibiului"
+  ],
+  "Suceava": [
+    "Suceava",
+    "Falticeni",
+    "Radauti",
+    "Campulung Moldovenesc",
+    "Vatra Dornei",
+    "Gura Humorului",
+    "Vicovu de Sus",
+    "Dolhasca",
+    "Liteni",
+    "Salcea",
+    "Siret",
+    "Cajvana",
+    "Frasin",
+    "Brosteni",
+    "Milisauti",
+    "Solca"
+  ],
+  "Teleorman": [
+    "Alexandria",
+    "Rosiorii de Vede",
+    "Turnu Magurele",
+    "Zimnicea",
+    "Videle"
+  ],
+  "Timis": [
+    "Timisoara",
+    "Lugoj",
+    "Sannicolau Mare",
+    "Jimbolia",
+    "Recas",
+    "Faget",
+    "Buzias",
+    "Deta",
+    "Gataia",
+    "Ciacova"
+  ],
+  "Tulcea": [
+    "Tulcea",
+    "Babadag",
+    "Macin",
+    "Isaccea",
+    "Sulina"
+  ],
+  "Valcea": [
+    "Ramnicu Valcea",
+    "Dragasani",
+    "Babeni",
+    "Calimanesti",
+    "Horezu",
+    "Brezoi",
+    "Balcesti",
+    "Berbesti",
+    "Baile Olanesti",
+    "Ocnele Mari",
+    "Baile Govora"
+  ],
+  "Vaslui": [
+    "Barlad",
+    "Vaslui",
+    "Husi",
+    "Negresti",
+    "Murgeni"
+  ],
+  "Vrancea": [
+    "Focsani",
+    "Adjud",
+    "Marasesti",
+    "Odobesti",
+    "Panciu"
+  ]
+}

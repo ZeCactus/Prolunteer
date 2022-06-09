@@ -1,0 +1,28 @@
+﻿@model List<EventVM>
+@{
+    ViewData["Title"] = "My Events";
+}
+
+@section Links{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.css" />
+}
+
+<div>
+    <a asp-controller="UserAccount" asp-action="Account">Back to my account</a>
+</div>
+<div class="d-sm-flex justify-content-between">
+    <h1>Available Events</h1>
+
+</div>
+
+<input id="search-input" type="text" value="" placeholder="Search..." style="margin-bottom: 20px;" />
+
+<div id="pagination-display">
+    <div id="data-container"></div>
+</div>
+
+
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"></script>
+    <script src="~/js/PageSpecificScripts/Event/availableevents.js"></script>
+}

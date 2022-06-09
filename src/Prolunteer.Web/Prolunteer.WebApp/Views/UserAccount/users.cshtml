@@ -1,0 +1,36 @@
+﻿@using Prolunteer.BusinessLogic.Implementation.County.Models
+@using Prolunteer.Common.DTOs
+@model PaginationDTO<CountyViewModel>
+
+@{
+    ViewData["Title"] = "Counties";
+}
+
+@section Links{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.css" />
+}
+
+<h1>Users</h1>
+
+<input id="search-input" type="text" value="" placeholder="Search..." />
+<div id="pagination-display">
+    <div class="row">
+        <div class="col-sm">
+            <b>Name</b>
+        </div>
+        <div class="col-sm">
+            <b>EMail</b>
+        </div>
+        <div class="col-sm">
+            <b>Role</b>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div id="data-container"></div>
+</div>
+
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"></script>
+    <script src="~/js/PageSpecificScripts/UserAccount/users.js"></script>
+}

@@ -1,0 +1,93 @@
+﻿@model Prolunteer.BusinessLogic.Implementation.Event.Models.AvailableEventDetailsModel
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+@section Links{ 
+    <link rel="stylesheet" href="~/css/PageSpecificCSS/Event/availableeventdetails.css" />
+} 
+<div>
+    <a asp-action="MyEvents" class="btn btn-primary">Back to List</a>
+</div>
+
+<div>
+    <h4>Event Details</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Organizer:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Organizer
+        </dd>
+        <dt class="col-sm-2">
+            Event Type:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.EventType
+        </dd>
+        <dt class="col-sm-2">
+            Location:
+        </dt>
+        <dd class="col-sm-10">
+            @($"{Model.Location}, {Model.City}, {Model.County}")
+        </dd>
+        <dt class="col-sm-2">
+            Name
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Name
+        </dd>
+        <dt class="col-sm-2">
+            Description
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Description
+        </dd>
+        <dt class="col-sm-2">
+            StartDate
+        </dt>
+        <dd class="col-sm-10">
+            @Model.StartDate
+        </dd>
+        <dt class="col-sm-2">
+            EndDate
+        </dt>
+        <dd class="col-sm-10">
+            @Model.EndDate
+        </dd>
+    </dl>
+</div>
+<div>
+    @if (Model.AvailablePositions.Count() == 0)
+    {
+        <div class="d-sm-flex justify-content-center">
+            <div class="alert-info border rounded border-info w-50 h-25">
+                <h1 class="text-center">There are no available volunteer positions for this event</h1>
+            </div>
+        </div>
+    }
+    else
+    {
+        foreach (var availablePosition in Model.AvailablePositions)
+        {
+            <hr />
+            <div class="d-sm-flex flex-column" style="position: relative;">
+                @if(!availablePosition.IsAvailable)
+                {
+                    <div class="overlay text-center">
+                        <h1 class="text-white">NOT AVAILABLE</h1>
+                    </div>
+                }
+                <h4>Position: @availablePosition.Name</h4>
+                <p>Enrolled volunteers: @($"{availablePosition.EnrolledVolunteers}/{availablePosition.MaximumNrOfVolunteers}")</p>
+                <div>
+                    <a class="btn btn-success" asp-controller="VolunteerPosition" asp-action="Enroll" asp-route-id="@availablePosition.Id">Enroll</a>
+                </div>
+            </div>
+        }
+    }
+</div>
+@section scripts{
+}

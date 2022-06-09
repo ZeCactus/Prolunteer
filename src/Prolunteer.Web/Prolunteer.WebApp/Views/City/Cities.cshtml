@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Prolunteer.BusinessLogic.Implementation.City.Models.CityViewModel>
+
+@{
+    ViewData["Title"] = "Cities";
+}
+
+@section Links{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.css" />
+}
+
+<h1>Cities</h1>
+
+<p>
+    <a asp-action="AddCity" class="btn btn-success">Create New</a>
+</p>
+
+<input id="search-input" type="text" value="" placeholder="Search..." />
+<div id="pagination-display">
+    <div class="paginationjs">
+        <div class="paginationjs-pages"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <b>Name</b>
+        </div>
+        <div class="col-sm">
+            <b>County</b>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div id="data-container"></div>
+</div>
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"></script>
+    <script src="~/js/PageSpecificScripts/City/cities.js"></script>
+}

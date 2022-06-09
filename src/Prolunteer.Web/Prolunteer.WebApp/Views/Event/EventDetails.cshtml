@@ -1,0 +1,106 @@
+﻿@model Prolunteer.BusinessLogic.Implementation.Event.Models.EventDetailsVM
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+<div class="modal fade" id="volunteer-position-removal-confirmation-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmation Required</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button class="btn btn-danger volunteer-position-remove-button">Remove</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="MyEvents">Back to List</a>
+</div>
+
+<div>
+    <h4>Event Details</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Organizer:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Organizer
+        </dd>
+        <dt class="col-sm-2">
+            Event Type:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.EventType
+        </dd>
+        <dt class="col-sm-2">
+            Location:
+        </dt>
+        <dd class="col-sm-10">
+            @($"{Model.Location}, {Model.City}, {Model.County}")
+        </dd>
+        <dt class="col-sm-2">
+            Name
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Name
+        </dd>
+        <dt class="col-sm-2">
+            Description
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Description
+        </dd>
+        <dt class="col-sm-2">
+            StartDate
+        </dt>
+        <dd class="col-sm-10">
+            @Model.StartDate
+        </dd>
+        <dt class="col-sm-2">
+            EndDate
+        </dt>
+        <dd class="col-sm-10">
+            @Model.EndDate
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-controller="VolunteerPosition" asp-action="AddVolunteerPosition" asp-route-id="@Model.Id" class="btn btn-success" style="height: 40px">+ Add Position</a>
+    @if (Model.VolunteerPositions.Count() == 0)
+    {
+        <div class="d-sm-flex justify-content-center">
+            <div class="alert-info border rounded border-info w-50 h-25">
+                <h1 class="text-center">You don't have any volunteer positions for this event</h1>
+            </div>
+        </div>
+    }
+    else
+    {
+        foreach (var volunteerPosition in Model.VolunteerPositions)
+        {
+            <hr />
+            <div class="d-sm-flex flex-column">
+                <h4>Position: @volunteerPosition.Name</h4>
+                <p>Enrolled volunteers: @($"{volunteerPosition.EnrolledVolunteers}/{volunteerPosition.MaximumNrOfVolunteers}")</p>
+                <div>
+                    <a class="btn btn-primary" asp-controller="VolunteerPosition" asp-action="VolunteerPositionDetails" asp-route-id="@volunteerPosition.Id">Details</a>
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#volunteer-position-removal-confirmation-modal" data-position-id=@volunteerPosition.Id data-position-name=@volunteerPosition.Name>Remove</button>
+                </div>
+            </div>
+        }
+    }
+</div>
+@section scripts{ 
+    <script src="~/js/PageSpecificScripts/Event/eventdetails.js"></script>
+}

@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Prolunteer.Common\Prolunteer.Common.csproj" />
+    <ProjectReference Include="..\Prolunteer.DataAccess\Prolunteer.DataAccess.csproj" />
+    <ProjectReference Include="..\Prolunteer.Entities\Prolunteer.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

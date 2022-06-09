@@ -1,0 +1,48 @@
+﻿@model List<EventVM>
+@{
+    ViewData["Title"] = "My Events";
+}
+
+@section Links{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.css" />
+}
+
+<div class="modal fade" id="event-removal-confirmation-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmation Required</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button class="btn btn-danger event-remove-button">Remove</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="UserAccount" asp-action="Account">Back to my account</a>
+</div>
+<div class="d-sm-flex justify-content-between">
+    <h1>My Events</h1>
+    <a asp-controller="Event" asp-action="AddEvent" class="btn btn-success" style="height: 40px">+ Add Event</a>
+</div>
+
+<input id="search-input" type="text" value="" placeholder="Search..." style="margin-bottom: 20px;"/>
+
+<div id="pagination-display">
+    <div id="data-container"></div>
+</div>
+
+
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"></script>
+    <script src="~/js/PageSpecificScripts/Event/myevents.js"></script>
+}

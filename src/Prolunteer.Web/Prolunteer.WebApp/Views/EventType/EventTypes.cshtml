@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Prolunteer.BusinessLogic.Implementation.EventType.Models.EventTypeViewModel>
+
+@{
+    ViewData["Title"] = "EventTypes";
+}
+
+@section Links{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.css" />
+}
+
+<h1>EventTypes</h1>
+
+<p>
+    <a asp-action="AddEventType" class="btn btn-success">Add EventType</a>
+</p>
+
+<input id="search-input" type="text" value="" placeholder="Search..." />
+<div id="pagination-display">
+    <div class="paginationjs">
+        <div class="paginationjs-pages"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm"><b>Name</b></div>
+        <div class="col-sm"><b>Description</b></div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div id="data-container"></div>
+</div>
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"></script>
+    <script src="~/js/PageSpecificScripts/EventType/eventtypes.js"></script>
+}

@@ -1,0 +1,73 @@
+﻿@model Prolunteer.BusinessLogic.Implementation.Event.Models.EventCreateModel
+
+@{
+    ViewData["Title"] = "CreateEvent";
+}
+
+<h1>CreateEvent</h1>
+
+<h4>EventCreateModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddEvent">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EventTypeId" class="control-label"></label>
+                <select asp-for="EventTypeId" class="form-control"></select>
+                <span asp-validation-for="EventTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="CountyId"  class="control-label">County:</label>
+                <select id="CountyId" name="CountyId" class="form-control">
+                    <option disabled selected>Alege un judet</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="CityId" class="control-label">City:</label>
+                <select id="CityId" name="CityId" class="form-control">
+                    <option disabled selected>Intai alege un judet</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationId" class="control-label">Location:</label>
+                <select asp-for="LocationId" class="form-control">
+                    <option disabled selected>Intai alege un oras</option>
+                </select>
+                <span asp-validation-for="LocationId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"></label>
+                <input asp-for="EndDate" class="form-control" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="MyEvents">Back to List</a>
+</div>
+
+@section Scripts {
+    <script src="~/js/PageSpecificScripts/Event/addevent.js"></script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

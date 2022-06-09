@@ -1,0 +1,58 @@
+﻿@inject Prolunteer.Common.DTOs.CurrentUserDTO currentUser
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div>
+    <h1>Admin Dashboard</h1>
+    <div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-4 offset-sm-4 text-center">
+                <a class="w-75 btn btn-primary" asp-controller="UserAccount" asp-action="Users">Users List</a>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-4 offset-sm-4 text-center">
+                <a class="w-75 btn btn-primary" asp-controller="County" asp-action="Counties">Counties List</a>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-4 offset-sm-4 text-center">
+                <a class="w-75 btn btn-primary" asp-controller="City" asp-action="Cities">Cities List</a>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-4 offset-sm-4 text-center">
+                <a class="w-75 btn btn-primary" asp-controller="Location" asp-action="Locations">Locations List</a>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-4 offset-sm-4 text-center">
+                <a class="w-75 btn btn-primary" asp-controller="EventType" asp-action="EventTypes">Event Types</a>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-4 offset-sm-4 text-center">
+                <a class="w-75 btn btn-primary" asp-controller="Certification" asp-action="Certifications">Certifications</a>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-4 offset-sm-4 text-center">
+                <a class="w-75 btn btn-primary" asp-controller="Certification" asp-action="PendingCertifications">View Pending Certification Requests</a>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-4 offset-sm-4 text-center">
+                <a class="w-75 btn btn-danger" asp-controller="Seeding" asp-action="Index">Seeding Dashboard</a>
+            </div>
+        </div>
+    </div>
+</div>
