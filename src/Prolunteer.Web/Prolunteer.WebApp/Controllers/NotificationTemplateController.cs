@@ -24,7 +24,7 @@ namespace Prolunteer.WebApp.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult EditNotificationTemplate(int id)
         {
-            if(id == null)
+            if(id == 0)
             {
                 return View();
             }

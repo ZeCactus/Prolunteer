@@ -25,7 +25,8 @@ namespace Prolunteer.BusinessLogic.Implementation.Event
 
         public PaginationDTO<EventVM> GetEvents(int pageNumber, int pageSize, string filter)
         {
-            var events = uow.Events.Get().Where(e => !e.IsDeleted && e.OrganizerId == CurrentUser.Id);
+            var events = uow.Events.Get()
+                .Where(e => !e.IsDeleted && e.OrganizerId == CurrentUser.Id);
 
             if (!string.IsNullOrWhiteSpace(filter))
             {
@@ -43,6 +44,31 @@ namespace Prolunteer.BusinessLogic.Implementation.Event
             var count = events.Count();
 
             return new PaginationDTO<EventVM>(elements, count);
+        }
+
+        public PaginationDTO<VolunteerEventVM> GetEnrolledEvents(int pageNumber, int pageSize, string filter)
+        {
+            var enrolledPositions = uow.VolunteerParticipations.Get()
+                .Where(vp => vp.UserId == CurrentUser.Id && !vp.VolunteerPosition.Event.IsDeleted)
+                .Include(vp => vp.VolunteerPosition.Event.Organizer)
+                .Include(vp => vp.VolunteerPosition.Event.Location)
+                .Include(vp => vp.VolunteerPosition.Event.EventType)
+                .Select(vp => vp.VolunteerPosition);
+
+            if (!string.IsNullOrWhiteSpace(filter))
+            {
+                enrolledPositions = enrolledPositions.Where(vp => vp.Event.Name.Contains(filter) || vp.Event.Description.Contains(filter) || vp.Event.Location.Name.Contains(filter));
+            }
+
+            var elements = enrolledPositions
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .Select(vp => Mapper.Map<Entities.VolunteerPosition, VolunteerEventVM>(vp))
+                .ToList();
+
+            var count = enrolledPositions.Count();
+
+            return new PaginationDTO<VolunteerEventVM>(elements, count);
         }
         public List<EventVM> GetEvents(Guid OrganizerId)
         {

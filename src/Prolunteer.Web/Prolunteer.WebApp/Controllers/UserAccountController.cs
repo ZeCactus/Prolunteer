@@ -5,7 +5,6 @@ using Prolunteer.BusinessLogic.Implementation.Account;
 using Prolunteer.BusinessLogic.Implementation.Account.Models;
 using Prolunteer.Common.DTOs;
 using Prolunteer.WebApp.Code.Base;
-using Prolunteer.Common.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -63,14 +63,14 @@ namespace Prolunteer.BusinessLogic.Implementation.Seeding
         public void SeedUsers()
         {
             List<string> firstNames;
-            using (var reader = new StreamReader("C:\\Users\\bogdan.paicu\\Source\\Repos\\BogdanPaicu\\src\\Prolunteer.Web\\Prolunteer.BusinessLogic\\Implementation\\Seeding\\Files\\firstnames.json"))
+            using (var reader = new StreamReader("D:\\Fac\\Licenta\\BogdanPaicu\\src\\Prolunteer.Web\\Prolunteer.BusinessLogic\\Implementation\\Seeding\\Files\\firstnames.json"))
             {
                 var json = reader.ReadToEnd();
                 firstNames = JsonConvert.DeserializeObject<List<string>>(json);
             }
 
             List<string> lastNames;
-            using (var reader = new StreamReader("C:\\Users\\bogdan.paicu\\Source\\Repos\\BogdanPaicu\\src\\Prolunteer.Web\\Prolunteer.BusinessLogic\\Implementation\\Seeding\\Files\\lastnames.json"))
+            using (var reader = new StreamReader("D:\\Fac\\Licenta\\BogdanPaicu\\src\\Prolunteer.Web\\Prolunteer.BusinessLogic\\Implementation\\Seeding\\Files\\lastnames.json"))
             {
                 var json = reader.ReadToEnd();
                 lastNames = JsonConvert.DeserializeObject<List<string>>(json);
@@ -179,7 +179,7 @@ namespace Prolunteer.BusinessLogic.Implementation.Seeding
         public void SeedCounties()
         {
             List<string> countyNames;
-            using (var reader = new StreamReader("C:\\Users\\bogdan.paicu\\Source\\Repos\\BogdanPaicu\\src\\Prolunteer.Web\\Prolunteer.BusinessLogic\\Implementation\\Seeding\\Files\\counties.json"))
+            using (var reader = new StreamReader("D:\\Fac\\Licenta\\BogdanPaicu\\src\\Prolunteer.Web\\Prolunteer.BusinessLogic\\Implementation\\Seeding\\Files\\counties.json"))
             {
                 var json = reader.ReadToEnd();
                 countyNames = JsonConvert.DeserializeObject<List<string>>(json);
@@ -206,7 +206,7 @@ namespace Prolunteer.BusinessLogic.Implementation.Seeding
         public void SeedCities()
         {
             Dictionary<string, List<string>> citiesByCounty;
-            using (var reader = new StreamReader("C:\\Users\\bogdan.paicu\\Source\\Repos\\BogdanPaicu\\src\\Prolunteer.Web\\Prolunteer.BusinessLogic\\Implementation\\Seeding\\Files\\cities.json"))
+            using (var reader = new StreamReader("D:\\Fac\\Licenta\\BogdanPaicu\\src\\Prolunteer.Web\\Prolunteer.BusinessLogic\\Implementation\\Seeding\\Files\\cities.json"))
             {
                 var json = reader.ReadToEnd();
                 citiesByCounty = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(json);
@@ -413,7 +413,7 @@ namespace Prolunteer.BusinessLogic.Implementation.Seeding
         public void SeedUserCertifications()
         {
             var users = uow.Users.Get().Where(u => u.UserRoles.Any(ur => ur.RoleId == (int)RoleTypes.Volunteer)).ToList();
-            var loremIpsumDocument = File.ReadAllBytes("C:\\Users\\bogdan.paicu\\Source\\Repos\\BogdanPaicu\\src\\Prolunteer.Web\\Prolunteer.BusinessLogic\\Implementation\\Seeding\\Files\\lorem.pdf");
+            var loremIpsumDocument = File.ReadAllBytes("D:\\Fac\\Licenta\\BogdanPaicu\\src\\Prolunteer.Web\\Prolunteer.BusinessLogic\\Implementation\\Seeding\\Files\\lorem.pdf");
             var rng = new Random();
             foreach (var user in users)
             {

@@ -26,6 +26,17 @@ namespace Prolunteer.BusinessLogic.Implementation.Event.Mappings
                 .ForMember(evm => evm.Location, evm => evm.MapFrom(e => e.Location.Name))
                 .ForMember(evm => evm.StartDate, evm => evm.MapFrom(e => e.StartDate.Date.ToString("dd/MM/yyyy")))
                 .ForMember(evm => evm.EndDate, evm => evm.MapFrom(e => e.EndDate.Date.ToString("dd/MM/yyyy")));
+
+            CreateMap<Entities.VolunteerPosition, VolunteerEventVM>()
+                .ForMember(evm => evm.Organizer, evm => evm.MapFrom(vp => $"{vp.Event.Organizer.FirstName} {vp.Event.Organizer.LastName}"))
+                .ForMember(evm => evm.EventType, evm => evm.MapFrom(vp => vp.Event.EventType.Name))
+                .ForMember(evm => evm.Location, evm => evm.MapFrom(vp => vp.Event.Location.Name))
+                .ForMember(evm => evm.StartDate, evm => evm.MapFrom(vp => vp.Event.StartDate.Date.ToString("dd/MM/yyyy")))
+                .ForMember(evm => evm.EndDate, evm => evm.MapFrom(vp => vp.Event.EndDate.Date.ToString("dd/MM/yyyy")))
+                .ForMember(evm => evm.PositionName, evm => evm.MapFrom(vp => vp.Name))
+                .ForMember(evm => evm.Name, evm => evm.MapFrom(vp => vp.Event.Name))
+                .ForMember(evm => evm.Description, evm => evm.MapFrom(vp => vp.Event.Name));
+
             CreateMap<Entities.Event, EventDetailsVM>()
                 .ForMember(edvm => edvm.Organizer, edvm => edvm.MapFrom(e => $"{e.Organizer.FirstName} {e.Organizer.LastName}"))
                 .ForMember(edvm => edvm.EventType, edvm => edvm.MapFrom(e => e.EventType.Name))

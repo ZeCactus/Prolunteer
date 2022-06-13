@@ -23,8 +23,8 @@ namespace Prolunteer.WebApp.Controllers
             return View(model); 
         }
 
-        [Authorize(Roles = "EventManager")]
         [HttpGet]
+        [Authorize(Roles = "EventManager")]
         public IActionResult MyEvents()
         {
             return View();
@@ -39,8 +39,24 @@ namespace Prolunteer.WebApp.Controllers
             return Ok(model);
         }
 
-        [Authorize(Roles = "EventManager")]
         [HttpGet]
+        [Authorize(Roles = "Volunteer")]
+        public IActionResult MyEnrolledEvents()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Volunteer")]
+        public IActionResult GetMyEnrolledEvents(int pageNumber, int pageSize, string filter)
+        {
+            var model = Service.GetEnrolledEvents(pageNumber, pageSize, filter);
+
+            return Ok(model);
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "EventManager")]
         public IActionResult AddEvent()
         {
             var model = new EventCreateModel();
@@ -48,8 +64,8 @@ namespace Prolunteer.WebApp.Controllers
             return View(model);
         }
 
-        [Authorize(Roles = "EventManager")]
         [HttpPost]
+        [Authorize(Roles = "EventManager")]
         public IActionResult AddEvent(EventCreateModel model)
         {
             Service.CreateEvent(model);

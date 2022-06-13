@@ -7,7 +7,6 @@ using Prolunteer.Common.DTOs;
 using Prolunteer.Common.Extensions;
 using Prolunteer.Entities;
 using Prolunteer.Entities.Enums;
-using Prolunteer.Common.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
