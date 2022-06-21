@@ -20,7 +20,7 @@
         var nullOption = document.createElement("option");
         nullOption.setAttribute("disabled", "");
         nullOption.setAttribute("selected", "");
-        nullOption.text = "Alege un oras";
+        nullOption.text = "Pick a city";
         selectList.append(nullOption)
         $.ajax({
             url: "/City/GetCitiesForSelect",
@@ -30,7 +30,7 @@
             var nullOption = document.createElement("option");
             nullOption.setAttribute("disabled", "");
             nullOption.setAttribute("selected", "");
-            nullOption.text = "Alege un oras";
+            nullOption.text = "Pick a city";
             selectList.append(nullOption)
             data.forEach(datum => {
                 let option = document.createElement("option");

@@ -1,0 +1,15 @@
+﻿.event-view{
+    display: flex;
+    flex-direction: column;
+}
+
+.event-view>img{
+    position: absolute;
+    max-height: 200px;
+    align-self: flex-end;
+    justify-self: flex-start;
+}
+
+.event-view a.btn-primary{
+    margin-right: 20px;
+}

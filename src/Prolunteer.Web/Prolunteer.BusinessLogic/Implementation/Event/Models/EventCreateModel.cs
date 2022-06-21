@@ -1,4 +1,5 @@
-﻿using Prolunteer.BusinessLogic.Implementation.VolunteerPosition.Models;
+﻿using Microsoft.AspNetCore.Http;
+using Prolunteer.BusinessLogic.Implementation.VolunteerPosition.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,6 @@ namespace Prolunteer.BusinessLogic.Implementation.Event.Models
         public string Description { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
+        public IFormFile Image { get; set; }
     }
 }

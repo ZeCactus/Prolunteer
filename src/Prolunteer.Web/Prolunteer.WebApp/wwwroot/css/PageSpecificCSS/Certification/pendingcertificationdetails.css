@@ -1,5 +1,5 @@
 ﻿#pdfDisplayArea {
-    display:flex;
+    display: flex;
     flex-direction: column;
     margin: auto;
     margin-top: 20px;
@@ -10,6 +10,8 @@
     -webkit-box-shadow: 10px 13px 107px -21px rgb(77 77 77 / 75%) inset;
     -moz-box-shadow: 10px 13px 107px -21px rgba(0,0,0,0.75) inset;
     padding-top: auto;
+    max-height: 60vh;
+    overflow-y: scroll;
 }
 
 #pdfDisplayArea>canvas{

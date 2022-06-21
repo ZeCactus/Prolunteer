@@ -35,6 +35,10 @@ namespace Prolunteer.DataAccess.EntityFramework.Configurations
 
             entity.Property(e => e.StartDate).HasColumnType("datetime");
 
+            entity.Property(e => e.Image)
+                .HasColumnName("Image")
+                .IsRequired(false);
+
             entity.HasOne(d => d.Location)
                 .WithMany(p => p.Events)
                 .HasForeignKey(d => d.LocationId)

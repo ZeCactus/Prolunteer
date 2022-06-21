@@ -4,9 +4,7 @@
     ViewData["Title"] = "AddLocation";
 }
 
-<h1>AddLocation</h1>
-
-<h4>LocationCreateModel</h4>
+<h1>Add Location</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -15,13 +13,13 @@
             <div class="form-group">
                 <label class="control-label">County</label>
                 <select class="form-control" id="CountyId">
-                    <option disabled selected>Alege un judet</option>
+                    <option disabled selected>Pick a county</option>
                 </select>
             </div>
             <div class="form-group">
                 <label asp-for="CityId" class="control-label">City</label>
                 <select asp-for="CityId" class="form-control">
-                    <option disabled selected>Intai alege un judet</option>
+                    <option disabled selected>First pick a county</option>
                 </select>
                 <span asp-validation-for="CityId" class="text-danger"></span>
             </div>

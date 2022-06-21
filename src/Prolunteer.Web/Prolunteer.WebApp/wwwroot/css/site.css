@@ -19,7 +19,7 @@ body::before {
 }
 
 main{
-    height: 87.9vh;
+    min-height: calc(100vh - 57px - 60px - 1px);
 }
 
 a.navbar-brand {
@@ -78,12 +78,8 @@ html {
   min-height: 100%;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
 .footer {
-  position: absolute;
+  position: sticky;
   bottom: 0;
   width: 100%;
   white-space: nowrap;

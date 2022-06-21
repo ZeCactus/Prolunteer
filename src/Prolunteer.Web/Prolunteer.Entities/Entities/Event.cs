@@ -21,6 +21,8 @@ namespace Prolunteer.Entities
         public string Description { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+
+        public byte[] Image { get; set; }
         public bool IsDeleted { get; set; }
 
         public virtual Location Location { get; set; }

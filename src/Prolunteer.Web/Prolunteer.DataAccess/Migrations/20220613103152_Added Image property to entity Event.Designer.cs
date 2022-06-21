@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Prolunteer.DataAccess.EntityFramework;
 
 namespace Prolunteer.DataAccess.Migrations
 {
     [DbContext(typeof(ProlunteerContext))]
-    partial class ProlunteerContextModelSnapshot : ModelSnapshot
+    [Migration("20220613103152_Added Image property to entity Event")]
+    partial class AddedImagepropertytoentityEvent
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

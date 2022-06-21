@@ -1,4 +1,5 @@
-﻿@inject Prolunteer.Common.DTOs.CurrentUserDTO currentUser
+﻿@using Prolunteer.Common.Extensions
+@inject Prolunteer.Common.DTOs.CurrentUserDTO currentUser
 @{
     ViewData["Title"] = $"{currentUser.FirstName} {currentUser.LastName}";
 }
@@ -7,7 +8,7 @@
     <h1>@($"{currentUser.FirstName} {currentUser.LastName}")</h1>
     @foreach (var role in currentUser.Roles)
     {
-        <h4>@(((RoleTypes)role).ToString())</h4>
+        <h4>@(((RoleTypes)role).GetDisplayName())</h4>
     }
     <div class="container">
         <div class="row">

@@ -51,12 +51,24 @@
             location.appendTo(event_view);
             response.append("\n");
 
+            if (datum.image) {
+                var image = $(document.createElement("img"));
+                image.attr("src", "data:image/png;base64, " + datum.image);
+                image.appendTo(event_view);
+                response.append("\n");
+            }
+
+            var buttonArea = $(document.createElement("div"))
+            buttonArea.addClass("buttonArea");
+
             var detailsButton = $(document.createElement("a"));
             detailsButton.addClass("btn");
             detailsButton.addClass("btn-primary");
             detailsButton.attr("href", "/Event/AvailableEventDetails/" + datum.id);
             detailsButton.text("Details");
-            detailsButton.appendTo(event_view);
+            detailsButton.appendTo(buttonArea);
+
+            buttonArea.appendTo(event_view);
         })
         return response;
     }

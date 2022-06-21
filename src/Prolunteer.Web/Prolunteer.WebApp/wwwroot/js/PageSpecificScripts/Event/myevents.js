@@ -52,22 +52,34 @@
             location.appendTo(event_view);
             response.append("\n");
 
+            if (datum.image) {
+                var image = $(document.createElement("img"));
+                image.attr("src", "data:image/png;base64, " + datum.image);
+                image.appendTo(event_view);
+                response.append("\n");
+            }
+
+            var buttonArea = $(document.createElement("div"))
+            buttonArea.addClass("buttonArea");
+
             var detailsButton = $(document.createElement("a"));
             detailsButton.addClass("btn");
             detailsButton.addClass("btn-primary");
             detailsButton.attr("href", "/Event/EventDetails/" + datum.id);
             detailsButton.text("Details");
-            detailsButton.appendTo(event_view);
+            detailsButton.appendTo(buttonArea);
             event_view.append("\n");
 
             var deleteButton = $(document.createElement("button"));
             deleteButton.addClass("btn");
             deleteButton.addClass("btn-danger");
-            deleteButton.data("id", datum.id);
-            deleteButton.data("toggle", "modal");
-            deleteButton.data("target", "#event-removal-confirmation-modal")
+            deleteButton.attr("data-id", datum.id);
+            deleteButton.attr("data-toggle", "modal");
+            deleteButton.attr("data-target", "#event-removal-confirmation-modal")
             deleteButton.text("Delete");
-            deleteButton.appendTo(event_view);
+            deleteButton.appendTo(buttonArea);
+
+            buttonArea.appendTo(event_view);
         })
         return response;
     }

@@ -1,38 +1,36 @@
 ﻿@model Prolunteer.BusinessLogic.Implementation.Event.Models.EventCreateModel
 
 @{
-    ViewData["Title"] = "CreateEvent";
+    ViewData["Title"] = "Add Event";
 }
 
-<h1>CreateEvent</h1>
-
-<h4>EventCreateModel</h4>
+<h1>Create a new event</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="AddEvent">
+        <form asp-action="AddEvent" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="EventTypeId" class="control-label"></label>
+                <label asp-for="EventTypeId" class="control-label">Event Type:</label>
                 <select asp-for="EventTypeId" class="form-control"></select>
                 <span asp-validation-for="EventTypeId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label for="CountyId"  class="control-label">County:</label>
                 <select id="CountyId" name="CountyId" class="form-control">
-                    <option disabled selected>Alege un judet</option>
+                    <option disabled selected>Pick a county</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="CityId" class="control-label">City:</label>
                 <select id="CityId" name="CityId" class="form-control">
-                    <option disabled selected>Intai alege un judet</option>
+                    <option disabled selected>First pick a county</option>
                 </select>
             </div>
             <div class="form-group">
                 <label asp-for="LocationId" class="control-label">Location:</label>
                 <select asp-for="LocationId" class="form-control">
-                    <option disabled selected>Intai alege un oras</option>
+                    <option disabled selected>First pick a county</option>
                 </select>
                 <span asp-validation-for="LocationId" class="text-danger"></span>
             </div>
@@ -47,14 +45,19 @@
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="StartDate" class="control-label"></label>
+                <label asp-for="StartDate" class="control-label">Start Date</label>
                 <input asp-for="StartDate" class="form-control" />
                 <span asp-validation-for="StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EndDate" class="control-label"></label>
+                <label asp-for="EndDate" class="control-label">End Date</label>
                 <input asp-for="EndDate" class="form-control" />
                 <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

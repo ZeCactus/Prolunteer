@@ -70,7 +70,7 @@ namespace Prolunteer.BusinessLogic.Implementation.Account
                 .Where(u => !u.UserRoles.Any(ur => ur.RoleId == (int)RoleTypes.Admin));
             if (!string.IsNullOrWhiteSpace(filter))
             {
-                users = users.Where(u => u.FirstName.Contains(filter) || u.LastName.Contains(filter) || $"{u.FirstName} {u.LastName}".Contains(filter));
+                users = users.Where(u => u.FirstName.Contains(filter) || u.LastName.Contains(filter) || u.EMail.Contains(filter));
             }
             var elements = users
                 .Skip((pageNumber - 1) * pageSize)

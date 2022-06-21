@@ -6,6 +6,7 @@
 
 @section Links{ 
     <link rel="stylesheet" href="~/css/PageSpecificCSS/Event/availableeventdetails.css" />
+    <link rel="stylesheet" href="~/css/PageSpecificCSS/Event/event-view.css" />
 } 
 <div>
     <a asp-action="MyEvents" class="btn btn-primary">Back to List</a>
@@ -81,6 +82,7 @@
                     </div>
                 }
                 <h4>Position: @availablePosition.Name</h4>
+                <h5>@availablePosition.Description</h5>
                 <p>Enrolled volunteers: @($"{availablePosition.EnrolledVolunteers}/{availablePosition.MaximumNrOfVolunteers}")</p>
                 <div>
                     <a class="btn btn-success" asp-controller="VolunteerPosition" asp-action="Enroll" asp-route-id="@availablePosition.Id">Enroll</a>

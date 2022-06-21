@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Prolunteer.BusinessLogic.Implementation.Event
 {
@@ -38,6 +39,7 @@ namespace Prolunteer.BusinessLogic.Implementation.Event
                 .Take(pageSize)
                 .Include(e => e.Organizer)
                 .Include(e => e.EventType)
+                .Include(e => e.Location)
                 .Select(e => Mapper.Map<Entities.Event, EventVM>(e))
                 .ToList();
 
@@ -86,6 +88,13 @@ namespace Prolunteer.BusinessLogic.Implementation.Event
             {
                 EventCreateModelValidator.Validate(model).ThenThrow();
                 var newEvent = Mapper.Map<EventCreateModel, Entities.Event>(model);
+
+                using (var MS = new MemoryStream())
+                {
+                    model.Image.CopyTo(MS);
+                    newEvent.Image = MS.ToArray();
+                }
+
                 uow.Events.Insert(newEvent);
                 uow.SaveChanges();
             });

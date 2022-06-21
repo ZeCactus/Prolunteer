@@ -17,5 +17,6 @@ namespace Prolunteer.BusinessLogic.Implementation.Event.Models
         public string StartDate { get; set; }
         public string EndDate { get; set; }
         public string PositionName { get; set; }
+        public string Image { get; set; }
     }
 }

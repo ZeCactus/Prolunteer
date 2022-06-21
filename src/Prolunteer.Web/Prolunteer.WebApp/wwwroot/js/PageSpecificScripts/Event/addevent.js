@@ -37,8 +37,8 @@
     $("#CountyId").change(function (event) {
         citySelect.find("option").remove();
         locationSelect.find("option").remove();
-        citySelect.append(createPlaceholderOption("Alege un oras"));
-        locationSelect.append(createPlaceholderOption("Intai alege un oras"));
+        citySelect.append(createPlaceholderOption("Pick a city"));
+        locationSelect.append(createPlaceholderOption("First pick a city"));
         $.ajax({
             url: "/City/GetCitiesForSelect",
             type: "GET",
@@ -56,7 +56,7 @@
 
     $("#CityId").change(function (event) {
         locationSelect.find("option").remove();
-        locationSelect.append(createPlaceholderOption("Alege o locatie"));
+        locationSelect.append(createPlaceholderOption("Pick a location"));
         $.ajax({
             url: "/Location/GetLocationsForSelect",
             type: "GET",

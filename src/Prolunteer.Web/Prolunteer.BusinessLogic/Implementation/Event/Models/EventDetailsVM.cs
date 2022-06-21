@@ -19,6 +19,7 @@ namespace Prolunteer.BusinessLogic.Implementation.Event.Models
         public string Description { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }
+        public string Image { get; set; }
         public ICollection<VolunteerPositionViewModel> VolunteerPositions { get; set; }
     }
 }
